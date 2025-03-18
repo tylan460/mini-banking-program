@@ -27,7 +27,7 @@ public class Main {
 
                 }
                 case '3' -> {
-                    withdraw = withdraw();
+                    withdraw = withdraw(balance);
                     balance -= withdraw;
 
                 }
@@ -51,16 +51,32 @@ public class Main {
 
         System.out.print("Enter the amount to be deposited: ");
         deposit = scanner.nextDouble();
-        return deposit;
+        scanner.nextLine();
+        if (deposit <= 0) {
+            System.out.println("Cannot deposit 0 or less");
+            return 0;
+        } else {
+            return deposit;
+        }
 
     }
 
-    static double withdraw() {
+    static double withdraw(double balance) {
         double withdraw;
 
         System.out.print("Enter the amount to be withdrawn: ");
         withdraw = scanner.nextDouble();
-        return withdraw;
+        scanner.nextLine();
+        if (withdraw < 0) {
+            System.out.println("Cannot withdraw a negative amount");
+            return 0;
+        } else if (withdraw > balance) {
+            System.out.println("Insufficient funds");
+            return 0;
+        } else {
+            return withdraw;
+        }
+
     }
 
     static void starsPattern() {
