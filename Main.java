@@ -2,8 +2,10 @@ import java.util.Scanner;
 
 public class Main {
 
+    static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+
         // variables
         double balance = 0;
 
@@ -46,7 +48,7 @@ public class Main {
 
     static double deposit() {
         double deposit;
-        Scanner scanner = new Scanner(System.in);
+
         System.out.print("Enter the amount to be deposited: ");
         deposit = scanner.nextDouble();
         return deposit;
@@ -55,7 +57,7 @@ public class Main {
 
     static double withdraw() {
         double withdraw;
-        Scanner scanner = new Scanner(System.in);
+
         System.out.print("Enter the amount to be withdrawn: ");
         withdraw = scanner.nextDouble();
         return withdraw;
@@ -77,7 +79,6 @@ public class Main {
 
     static char template() {
 
-        Scanner scanner = new Scanner(System.in);
         char choice;
         starsPattern();
         System.out.println("BANKING PROGRAM");
